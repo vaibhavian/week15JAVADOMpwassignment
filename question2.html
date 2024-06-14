@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question No 2 - Theme Toggle</title>
+    <style>
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        #toggleButton {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <h2 id="modeText">Light Mode</h2>
+    <button id="toggleButton">Toggle Theme</button>
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            const body = document.body;
+            const modeText = document.getElementById('modeText');
+
+            
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+
+
+            if (body.classList.contains('dark-mode')) {
+                modeText.textContent = 'Dark Mode';
+            } else {
+                modeText.textContent = 'Light Mode';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question No 6 - Dropdown Example</title>
+    <style>
+        #dropdown {
+            padding: 10px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="heading">Which is favourite Programming Language :</h2>
+    <select id="dropdown"></select>
+
+    <script>
+        const options = ["Javascript", "java", "Pyton", "C++"];
+        const dropdown = document.getElementById('dropdown');
+
+        options.forEach(optionText => {
+            const option = document.createElement('option');
+            option.value = optionText.toLowerCase().replace(/\s+/g, '-'); 
+
+
+            option.textContent = optionText; 
+            dropdown.appendChild(option); 
+        });
+    </script>
+</body>
+</html>

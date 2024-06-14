@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question No 3 - Web Counter</title>
+    <style>
+        #counter {
+            font-size: 2em;
+            margin: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        #incrementButton {
+            background-color: green;
+            color: white;
+        }
+
+        #decrementButton {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Counter: <span id="counter">0</span></h2>
+    <button id="incrementButton" class="button">+</button>
+    <button id="decrementButton" class="button">-</button>
+
+    <script>
+        const counterElement = document.getElementById('counter');
+        const incrementButton = document.getElementById('incrementButton');
+        const decrementButton = document.getElementById('decrementButton');
+        let counter = 0;
+
+        incrementButton.addEventListener('click', function() {
+            counter++;
+            counterElement.textContent = counter;
+        });
+
+        decrementButton.addEventListener('click', function() {
+            counter--;
+            if (counter < 0) {
+                alert('Counter cannot be below zero!');
+                counter = 0;
+            }
+            counterElement.textContent = counter;
+        });
+    </script>
+</body>
+</html>

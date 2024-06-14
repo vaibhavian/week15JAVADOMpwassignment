@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question No 7 - Search List</title>
+    <style>
+        #itemList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .item {
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+        }
+
+        #inputField {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h2>Search List </h2>
+    <input type="text" id="inputField" placeholder="Search for iteams">
+    <ul id="itemList"></ul>
+
+    <script>
+        const items = ["HTML", "CSS", "Tailwind CSS", "GitHub", "JavaScript", "Python", "C++"];
+        const inputField = document.getElementById('inputField');
+        const itemList = document.getElementById('itemList');
+
+        function updateList(filter) {
+            itemList.innerHTML = '';
+            const filteredItems = items.filter(item => item.toLowerCase().includes(filter.toLowerCase()));
+
+            filteredItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                listItem.classList.add('item');
+                itemList.appendChild(listItem);
+            });
+        }
+
+        inputField.addEventListener('input', function() {
+            updateList(inputField.value);
+        });
+
+        // Initial population of the list
+        updateList('');
+    </script>
+</body>
+</html>

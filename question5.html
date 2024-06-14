@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question No 5 - Image Toggle</title>
+    <style>
+        #toggleButton {
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #image {
+            display: none;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="imageState">Image is hidden</h2>
+    <button id="toggleButton">Show Image</button>
+    <br>
+    <img id="image" src="Screenshot_14-6-2024_115554_drive.google.com.jpeg" alt="Placeholder Image">
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            const image = document.getElementById('image');
+            const imageState = document.getElementById('imageState');
+            const button = document.getElementById('toggleButton');
+
+            if (image.style.display === 'none') {
+                image.style.display = 'block';
+                imageState.textContent = 'Image is visible';
+                button.textContent = 'Hide Image';
+            } else {
+                image.style.display = 'none';
+                imageState.textContent = 'Image is hidden';
+                button.textContent = 'Show Image';
+            }
+        });
+    </script>
+</body>
+</html>
